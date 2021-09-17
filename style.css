@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.tools{
+  z-index: 10;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 200px;
+  height: 30px;
+  display: flex;
+}
+.tools > span{
+  width: 40px;
+  text-align: center; 
+  padding: 5px; 
+  color: #5fdafb;
+}
+.tools > button{
+  width: 30px;
+  color: #5fdafb;
+  background: transparent;
+  border: 1px solid #5fdafb;
+  transition: .3s;
+  font-size: 18px;
+}
+.tools > button:hover{
+  color:  #282C34;
+  background: #5fdafb;
+  cursor: pointer;
+}
+#fade , #dvd, #clear{
+  width: 40px;
+  font-size: 10px;
+  margin-left: 4px;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  background: #282C34;
+  position: relative;
+}
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.bg{
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.bg > h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30vw;
+  color: transparent;
+  -webkit-text-stroke: 1px #161c25;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.dvd{
+  position: absolute;
+  top: 0px;
+  left: 10%;
+  width: 160px;
+  height: 50px;
+  border-radius: 50%;
+  background: #51688E;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  animation: dvd 15s linear  infinite ;
+}
+.dvd > p{
+  font-size: 48px;
+  font-weight: 900;
+  color: #282C34;
+  user-select: none;
+  pointer-events: none;
+}
+.dvd.hide{
+  display: none;
+}
+.dvd.hideMain{
+  display: none;
+}
+@keyframes dvd {
+  0%{ top: 0; left: 10%; }
+  8%{ top: 20%; left: 0%; background: rgb(167, 164, 7); }
+  30%{ top: calc(98.5% - 50px); left: 30%; background: #4c00ff; }
+  56%{top: 50%; left: calc(100% - 160px); background: rgb(255, 0, 76); }
+  70%{top: 0; left: 60%;  background: rgb(10, 224, 224); }
+  92%{ top: 20%; left: 0%; background: rgb(188, 10, 224); }
+  100%{ top: 0; left: 10%;background: #51688E; }
+}
+
+@media screen and (max-width: 700px) {
+  .dvd{
+    transform: scale(.7);
+  }
+}
+
+
+
+
+
+
+
